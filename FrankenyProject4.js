@@ -8,13 +8,25 @@
     Last Modified: N/A
 */
 $(document).ready(function(){
+	$("#instructionsScreen").hide();
+	$("#gameScreen").hide();
 	$("#btnStartGame").click(startGame);
 	$("#btnInstructions").click(displayInstructions);
+	$("#btnBack").click(showMainMenu);
 	function startGame(){
-		alert("Lol, dumbass thought this would start a game.");
+		$("#menuScreen").hide();
+		$("#gameScreen").show();
+		$("td").css("height",$("td").width() + "px");
+		$(".gameSquare").css("height",$("td").height() + "px");
+		$(".gameSquare").hide();
 	}
 	function displayInstructions(){
-		alert("Only noobs need instructions. Learn as you play!");
+		$("#menuScreen").hide();
+		$("#instructionsScreen").show();
+	}
+	function showMainMenu(){
+		$("#menuScreen").show();
+		$("#instructionsScreen").hide();
 	}
 	
 });

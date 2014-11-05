@@ -11,5 +11,6 @@
     </description>
 
 	<gap:platform name="ios"/>
-	<preference name="DisallowOverscroll" value="true" />
+	<preference name="DisallowOverscroll" value="true"/>
+	<preference name="Orientation" value="portrait"/>
 </widget>

@@ -43,6 +43,9 @@ $(document).ready(function(){
 		$("td").css("height",$("td").width() + "px");
 		$(".gameSquare").css("height",$("td").height() + "px");
 		$(".gameSquare").hide();
+		gameNotOver = true;
+		numSquaresTapped = 0;
+		$("#squareCoutn").html("Squares Tapped: 0<br/>Taps per Second: 0");
 		timeBetweenSquares = 2000;
 		setTimeout(timeout_trigger, timeBetweenSquares);
 		

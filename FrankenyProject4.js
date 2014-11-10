@@ -17,19 +17,20 @@ $(document).ready(function(){
 	var gameNotOver = true;
 	$("#instructionsScreen").hide();
 	$("#gameScreen").hide();
-	$("#btnStartGame").click(startGame);
-	$("#btnInstructions").click(displayInstructions);
-	$("#btnBack").click(showMainMenu);
-	$(".gameSquare").click(hideSquare);
+	$("#btnStartGame").touchstart(startGame);
+	$("#btnInstructions").touchstart(displayInstructions);
+	$("#btnBack").touchstart(showMainMenu);
+	$(".gameSquare").touchstart(hideSquare);
 	function hideSquare(){
-		if ($(this).is(':visible')){
-			$(this).hide();
-			numSquaresTapped += 1;
-			$(this).toggleClass("notTapped isTapped");
-			timer = new Date();
-			$("#squareCount").html("Squares Tapped: " + numSquaresTapped + "<br/> Taps per Second: " + (1000*numSquaresTapped/(timer.getTime() - startTime)).toFixed(3));
-			
-		}
+		if (gameNotOver)
+			if ($(this).is(':visible')){
+				$(this).hide();
+				numSquaresTapped += 1;
+				$(this).toggleClass("notTapped isTapped");
+				timer = new Date();
+				$("#squareCount").html("Squares Tapped: " + numSquaresTapped + "<br/> Taps per Second: " + (1000*numSquaresTapped/(timer.getTime() - startTime)).toFixed(3));
+				
+			}
 	}
 		
 	function startGame(){

@@ -20,6 +20,7 @@ $(document).ready(function(){
 	$("#btnStartGame").bind("touchstart",startGame);
 	$("#btnInstructions").bind("touchstart",displayInstructions);
 	$("#btnBack").bind("touchstart",showMainMenu);
+	$("#btnTryAgain").bind("touchstart",startGame);
 	$(".gameSquare").bind("touchstart",hideSquare);
 	function hideSquare(){
 		if (gameNotOver)
@@ -38,10 +39,12 @@ $(document).ready(function(){
 		startTime = timer.getTime()+2000;
 		$("#menuScreen").hide();
 		$("#gameScreen").show();
+		$("#btnTryAgain").hide();
 		$("td").css("height",$("td").width() + "px");
 		$(".gameSquare").css("height",$("td").height() + "px");
 		$(".gameSquare").hide();
-		setTimeout(timeout_trigger, 2000);
+		timeBetweenSquares = 2000;
+		setTimeout(timeout_trigger, timeBetweenSquares);
 		
 	}
 	function displayInstructions(){

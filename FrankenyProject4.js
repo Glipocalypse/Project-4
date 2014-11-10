@@ -104,6 +104,7 @@ $(document).ready(function(){
 			$(this).show();
 			$(this).css("background-color","#000000");
 			gameNotOver = false;
+			$("#btnTryAgain").show();
 		}
 		$(this).toggleClass("isNotAvailable isAvailable");
 	}

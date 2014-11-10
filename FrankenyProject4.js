@@ -17,10 +17,10 @@ $(document).ready(function(){
 	var gameNotOver = true;
 	$("#instructionsScreen").hide();
 	$("#gameScreen").hide();
-	$("#btnStartGame").touchstart(startGame);
-	$("#btnInstructions").touchstart(displayInstructions);
-	$("#btnBack").touchstart(showMainMenu);
-	$(".gameSquare").touchstart(hideSquare);
+	$("#btnStartGame").bind("touchstart",startGame);
+	$("#btnInstructions").bind("touchstart",displayInstructions);
+	$("#btnBack").bind("touchstart",showMainMenu);
+	$(".gameSquare").bind("touchstart",hideSquare);
 	function hideSquare(){
 		if (gameNotOver)
 			if ($(this).is(':visible')){

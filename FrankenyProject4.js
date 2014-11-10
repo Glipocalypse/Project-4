@@ -43,9 +43,11 @@ $(document).ready(function(){
 		$("td").css("height",$("td").width() + "px");
 		$(".gameSquare").css("height",$("td").height() + "px");
 		$(".gameSquare").hide();
+		$(".gameSquare").attr("class") = "gameSquare isAvailable isTapped";
+		$(".gameSquare").css("background-color","#FF0000");
 		gameNotOver = true;
 		numSquaresTapped = 0;
-		$("#squareCoutn").html("Squares Tapped: 0<br/>Taps per Second: 0");
+		$("#squareCount").html("Squares Tapped: 0<br/>Taps per Second: 0");
 		timeBetweenSquares = 2000;
 		setTimeout(timeout_trigger, timeBetweenSquares);
 		
@@ -103,12 +105,13 @@ $(document).ready(function(){
 		}
 	}
 	function checkTapped(){
-		if($(this).attr("class")=="gameSquare isNotAvailable notTapped"){
-			$(this).show();
-			$(this).css("background-color","#000000");
-			gameNotOver = false;
-			$("#btnTryAgain").show();
-		}
+		if (gameNotOver)
+			if($(this).attr("class")=="gameSquare isNotAvailable notTapped"){
+				$(this).show();
+				$(this).css("background-color","#000000");
+				gameNotOver = false;
+				$("#btnTryAgain").show();
+			}
 		$(this).toggleClass("isNotAvailable isAvailable");
 	}
  

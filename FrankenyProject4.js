@@ -43,7 +43,7 @@ $(document).ready(function(){
 		$("td").css("height",$("td").width() + "px");
 		$(".gameSquare").css("height",$("td").height() + "px");
 		$(".gameSquare").hide();
-		$(".gameSquare").attr("class") = "gameSquare isAvailable isTapped";
+		$(".gameSquare").attr("class","gameSquare isAvailable isTapped");
 		$(".gameSquare").css("background-color","#FF0000");
 		gameNotOver = true;
 		numSquaresTapped = 0;
